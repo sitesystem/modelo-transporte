@@ -6,27 +6,151 @@
     <title>Modelo de Transporte</title>
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
-
+    <link rel="stylesheet" href="./index.css">
     <!-- Font Awesome --
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"> -->
-	<script src="https://kit.fontawesome.com/696a6baa61.js" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/696a6baa61.js" crossorigin="anonymous"></script>
 
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js" integrity="sha384-q2kxQ16AaE6UbzuKqyBE9/u/KzioAlnx2maXQHiDX9d4/zp8Ok3f+M7DPm+Ib6IU" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.min.js" integrity="sha384-pQQkAEnwaBkjpqZ8RU1fF1AKtTcHJwFl3pblpTlHXybJjHpMYo79HY3hIi4NKxyj" crossorigin="anonymous"></script>
 
-    <script src="index.js"></script>
-
 </head>
 <body>
     <div class="container">
-        <h1>Modelo de Transporte</h1>
         <div class="row">
-            <div class="col-12">
-                <a href="https://github.com/sitesystem/modelo-transporte/raw/main/ModeloTransporte.xlsx" class="btn btn-success">
+            <div class="col-md-8 mt-1">
+                <h1>Modelo de Transporte</h1>
+                <small>
+                    <ul>
+                        <li>Técnica de Programación Lineal</li>
+                        <li>Estrategia de distribución y logística para satisfacer la demanda de clientes que minimiza el costo total</li>
+                        <li>Transportar una cantidad de unidades a sus destinos con el menor costo posible</li>
+                    </ul>
+                </small>
+            </div>
+            <div class="col-md-4 text-end">
+                <a href="https://github.com/sitesystem/modelo-transporte/raw/main/ModeloTransporte.xlsx" class="btn btn-success mt-3">
                     <i class="fa fa-file-excel"></i>&nbsp; Descargar Modelo de Transporte
                 </a>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-8">
+                <div class="row">
+                    <div class="col-md-3"></div>
+                    <div class="col-md-6 alert alert-primary text-center">Clientes</div>
+                    <div class="col-md-3"></div>
+                </div>
+                <div class="row">
+                    <div class="col-md-3 alert alert-primary text-center">Almacén</div>
+                    <div class="col-md-2 alert alert-info text-center">C1</div>
+                    <div class="col-md-2 alert alert-info text-center">C2</div>
+                    <div class="col-md-2 alert alert-info text-center">C3</div>
+                    <div class="col-md-3 alert alert-warning text-center">Oferta</div>
+                </div>
+                <div class="row">
+                    <div class="col-md-3 alert alert-info text-center">A1</div>
+                    <div class="col-md-2"><input id="a1c1" type="text" class="form-control"></div>
+                    <div class="col-md-2"><input id="a1c2" type="text" class="form-control"></div>
+                    <div class="col-md-2"><input id="a1c3" type="text" class="form-control"></div>
+                    <div class="col-md-3"><input id="a1o" type="text" class="form-control"></div>
+                </div>
+                <div class="row">
+                    <div class="col-md-3 alert alert-info text-center">A2</div>
+                    <div class="col-md-2"><input id="a2c1" type="text" class="form-control"></div>
+                    <div class="col-md-2"><input id="a2c2" type="text" class="form-control"></div>
+                    <div class="col-md-2"><input id="a2c3" type="text" class="form-control"></div>
+                    <div class="col-md-3"><input id="a2o" type="text" class="form-control"></div>
+                </div>
+                <div class="row">
+                    <div class="col-md-3 alert alert-warning text-center">Demanda</div>
+                    <div class="col-md-2"><input id="dc1" type="text" class="form-control"></div>
+                    <div class="col-md-2"><input id="dc2" type="text" class="form-control"></div>
+                    <div class="col-md-2"><input id="dc3" type="text" class="form-control"></div>
+                    <div class="col-md-3"></div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12 d-grid gap-2">
+                        <input id="btn_resolver" type="button" value="Resolver" class="btn btn-success btn-block" />
+                    </div>
+                    <div class="col-md-12 d-grid gap-2 mt-3">
+                        <div id="validacion" class="alert alert-warning" hidden>Porfavor llena todos los campos</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="row">
+                    <div class="col-md-7 text-end">Total de Producción (O)</div>
+                    <div class="col-md-5"><input id="totalOferta" type="text" class="form-control text-center" readonly></div>
+                    <div class="col-md-7 text-end">Total de Demanda (D)</div>
+                    <div class="col-md-5"><input id="totalDemanda" type="text" class="form-control text-center" readonly></div>
+                    <div class="col-md-5 offset-md-7"><hr></div>
+                    <div class="col-md-7 text-end">Diferencia (O-D) =</div>
+                    <div class="col-md-5"><input id="diferencia" type="text" class="form-control text-center" readonly></div>
+                </div>
+                <br>
+                <div class="row">
+                    <div class="col-md-11 offset-md-1 alert alert-primary text-center">FUNCIÓN OBJETIVO</div>
+                    <div class="col-md-6 offset-md-1 text-end">Total Costo Mín (Z) =</div>
+                    <div class="col-md-5"><input type="text" class="form-control text-center" readonly></div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="row">
+                <div class="col-md-1"></div>
+                <div class="col-md-6 alert alert-primary">Clientes</div>
+                <div class="col-md-5"></div>
+            </div>
+            <div class="row">
+                <div class="col-md-1 alert alert-primary text-center">Almacén</div>
+                <div class="col-md-2 alert alert-info text-center">C1</div>
+                <div class="col-md-2 alert alert-info text-center">C2</div>
+                <div class="col-md-2 alert alert-info text-center">C3</div>
+                <div class="col-md-2 alert alert-success text-center">Total</div>
+                <div class="col-md-1 alert alert-danger text-center">Signo</div>
+                <div class="col-md-2 alert alert-warning text-center">Oferta</div>
+            </div>
+            <div class="row">
+                <div class="col-md-1 alert alert-info text-center">A1</div>
+                <div class="col-md-2"><input id="Ra1c1" type="text" class="form-control text-center" readonly></div>
+                <div class="col-md-2"><input id="Ra1c2" type="text" class="form-control text-center" readonly></div>
+                <div class="col-md-2"><input id="Ra1c3" type="text" class="form-control text-center" readonly></div>
+                <div class="col-md-2"><input id="Ra1t" type="text" class="form-control text-center" readonly></div>
+                <div class="col-md-1 alert alert-danger text-center"><b><=</b></div>
+                <div class="col-md-2"><input id="Ra1o" type="text" class="form-control text-center" readonly></div>
+            </div>
+            <div class="row">
+                <div class="col-md-1 alert alert-info text-center">A2</div>
+                <div class="col-md-2"><input id="Ra2c1" type="text" class="form-control text-center" readonly></div>
+                <div class="col-md-2"><input id="Ra2c2" type="text" class="form-control text-center" readonly></div>
+                <div class="col-md-2"><input id="Ra2c3" type="text" class="form-control text-center" readonly></div>
+                <div class="col-md-2"><input id="Ra2t" type="text" class="form-control text-center" readonly></div>
+                <div class="col-md-1 alert alert-danger text-center"><b><=</b></div>
+                <div class="col-md-2"><input id="Ra2o" type="text" class="form-control text-center" readonly></div>
+            </div>
+            <div class="row">
+                <div class="col-md-1 alert alert-success text-center">Total</div>
+                <div class="col-md-2"><input id="Rtc1" type="text" class="form-control text-center" readonly></div>
+                <div class="col-md-2"><input id="Rtc2" type="text" class="form-control text-center" readonly></div>
+                <div class="col-md-2"><input id="Rtc3" type="text" class="form-control text-center" readonly></div>
+            </div>
+            <div class="row">
+                <div class="col-md-1 alert alert-danger text-center">Signo</div>
+                <div class="col-md-2 alert alert-danger text-center"><b>=</b></div>
+                <div class="col-md-2 alert alert-danger text-center"><b>=</b></div>
+                <div class="col-md-2 alert alert-danger text-center"><b>=</b></div>
+            </div>
+            <div class="row">
+                <div class="col-md-1 alert alert-warning text-center">Demanda</div>
+                <div class="col-md-2"><input id="Rdc1" type="text" class="form-control text-center" readonly></div>
+                <div class="col-md-2"><input id="Rdc2" type="text" class="form-control text-center" readonly></div>
+                <div class="col-md-2"><input id="Rdc3" type="text" class="form-control text-center" readonly></div>
             </div>
         </div>
     </div>
 </body>
 </html>
+
+<script src="index.js" lang="text/javascript"></script>
