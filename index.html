@@ -18,86 +18,114 @@
 <body>
     <div class="container">
         <div class="row">
-            <div class="col-md-8 mt-1">
-                <h1>Modelo de Transporte</h1>
-                <small>
+            <div class="col-md-12 mt-3">
+                <h1 class="alert alert-success text-center"> 
+                    <i class="fa fa-dolly-flatbed"></i>&nbsp; Modelo de Transporte&nbsp;
+                    <a href="https://github.com/sitesystem/modelo-transporte/raw/main/ModeloTransporte.xlsx" class="btn btn-success">
+                        <i class="fa fa-download"></i>&nbsp; Excel Modelo de Transporte
+                    </a>
+                </h1>
+                <!-- <small>
                     <ul>
                         <li>Técnica de Programación Lineal</li>
                         <li>Estrategia de distribución y logística para satisfacer la demanda de clientes que minimiza el costo total</li>
                         <li>Transportar una cantidad de unidades a sus destinos con el menor costo posible</li>
                     </ul>
-                </small>
-            </div>
-            <div class="col-md-4 text-end">
-                <a href="https://github.com/sitesystem/modelo-transporte/raw/main/ModeloTransporte.xlsx" class="btn btn-success mt-3">
-                    <i class="fa fa-file-excel"></i>&nbsp; Descargar Modelo de Transporte
-                </a>
+                </small> -->
             </div>
         </div>
         <div class="row">
-            <div class="col-md-8">
-                <div class="row">
-                    <div class="col-3"></div>
-                    <div class="col-6 alert alert-primary text-center">Clientes</div>
-                    <div class="col-3"></div>
-                </div>
-                <div class="row">
-                    <div class="col-3 alert alert-primary text-center">Almacén</div>
-                    <div class="col-2 alert alert-info text-center">C1</div>
-                    <div class="col-2 alert alert-info text-center">C2</div>
-                    <div class="col-2 alert alert-info text-center">C3</div>
-                    <div class="col-3 alert alert-warning text-center">Oferta</div>
-                </div>
-                <div class="row">
-                    <div class="col-3 alert alert-info text-center">A1</div>
-                    <div class="col-2"><input id="a1c1" type="text" class="form-control text-center"></div>
-                    <div class="col-2"><input id="a1c2" type="text" class="form-control text-center"></div>
-                    <div class="col-2"><input id="a1c3" type="text" class="form-control text-center"></div>
-                    <div class="col-3"><input id="a1o" type="text" class="form-control text-center"></div>
-                </div>
-                <div class="row">
-                    <div class="col-3 alert alert-info text-center">A2</div>
-                    <div class="col-2"><input id="a2c1" type="text" class="form-control text-center"></div>
-                    <div class="col-2"><input id="a2c2" type="text" class="form-control text-center"></div>
-                    <div class="col-2"><input id="a2c3" type="text" class="form-control text-center"></div>
-                    <div class="col-3"><input id="a2o" type="text" class="form-control text-center"></div>
-                </div>
-                <div class="row">
-                    <div class="col-3 alert alert-warning text-center">Demanda</div>
-                    <div class="col-2"><input id="dc1" type="text" class="form-control text-center"></div>
-                    <div class="col-2"><input id="dc2" type="text" class="form-control text-center"></div>
-                    <div class="col-2"><input id="dc3" type="text" class="form-control text-center"></div>
-                    <div class="col-3"></div>
-                </div>
-                <div class="row">
-                    <div class="col-md-12 d-grid gap-2">
-                        <input id="btn_resolver" type="button" value="Resolver por el Método Simplex" class="btn btn-success btn-block" />
+            <div class="col-md-3">
+                <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel" style="width: 18rem;">
+                    <div class="carousel-inner">
+                      <div class="carousel-item active">
+                        <img src="./slide1.png" class="d-block w-100" alt="...">
+                      </div>
+                      <div class="carousel-item">
+                        <img src="./slide2.png" class="d-block w-100" alt="...">
+                      </div>
+                      <div class="carousel-item">
+                        <img src="./slide3.png" class="d-block w-100" alt="...">
+                      </div>
                     </div>
-                    <div class="col-md-12 d-grid gap-2 mt-3">
-                        <div id="validacion" class="alert alert-warning" hidden>Porfavor llena todos los campos</div>
-                    </div>
+                    <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-bs-slide="prev">
+                      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                      <span class="visually-hidden">Previous</span>
+                    </a>
+                    <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-bs-slide="next">
+                      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                      <span class="visually-hidden">Next</span>
+                    </a>
                 </div>
+                <!--
+                <p>Técnica de Programación Lineal.</p>
+                <p>Estrategia de distribución y logística para satisfacer la demanda de clientes que minimiza el costo total.</p> 
+                <p>Transportar una cantidad de unidades a sus destinos con el menor costo posible.</p>
+                -->
             </div>
-
-            <div class="col-md-4">
-                <div class="row">
-                    <div class="col-md-7 text-end">Total de Producción (O)</div>
-                    <div class="col-md-5"><input id="totalOferta" type="text" class="form-control text-center" readonly></div>
-                    <div class="col-md-7 text-end">Total de Demanda (D)</div>
-                    <div class="col-md-5"><input id="totalDemanda" type="text" class="form-control text-center" readonly></div>
-                    <div class="col-md-5 offset-md-7"><hr></div>
-                    <div class="col-md-7 text-end">Diferencia (O-D) =</div>
-                    <div class="col-md-5"><input id="diferencia" type="text" class="form-control text-center" readonly></div>
+            <div class="col-md-9">
+                <div class="card ms-4" style="max-width:100%;">
+                    <div class="row g-0">
+                        <div class="col-md-6">
+                            <img src="./transporte.jpg" alt="...">
+                        </div>
+                        <div class="col-md-6">
+                            <div class="card-body">
+                                <h5 class="card-title">Problema de Transporte</h5>
+                                <p class="card-text">
+                                    This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.
+                                </p>
+                                <table class="table table-bordered table-sm mb-0">
+                                    <thead class="table-light">
+                                        <tr>
+                                            <th></th>
+                                            <th colspan="3" class="bg-danger text-white text-center" title="Destino">Clientes</th>
+                                            <th></th>
+                                        </tr>
+                                        <tr>
+                                            <th class="bg-danger text-white text-center" title="Fuente">Almacén</th>
+                                            <th class="bg-info text-center">C1</th>
+                                            <th class="bg-info text-center">C2</th>
+                                            <th class="bg-info text-center">C3</th>
+                                            <th class="bg-success text-white text-center" title="Capacidad o cantidad de producción">Oferta</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <th class="bg-info text-center">A1</th>
+                                            <td class="bg-warning text-center">$ 3</td>
+                                            <td class="bg-warning text-center">$ 4</td>
+                                            <td class="bg-warning text-center">$ 6</td>
+                                            <td class="text-center">160 000</td>
+                                        </tr>
+                                        <tr>
+                                            <th class="bg-info text-center">A2</th>
+                                            <td class="bg-warning text-center">$ 5</td>
+                                            <td class="bg-warning text-center">$ 3</td>
+                                            <td class="bg-warning text-center">$ 5</td>
+                                            <td class="text-center">120 000</td>
+                                        </tr>
+                                    </tbody>
+                                    <tfoot>
+                                        <tr>
+                                            <th class="bg-success text-white text-center" title="Cantidad que requieren los clientes">Demanda</th>
+                                            <td class="text-center">80 000</td>
+                                            <td class="text-center">70 000</td>
+                                            <td class="text-center">90 000</td>
+                                            <th></th>
+                                        </tr>
+                                    </tfoot>
+                                </table>                              
+                                <!-- <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p> -->
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <br>
-                <div class="row">
-                    <div class="col-md-11 offset-md-1 alert alert-primary text-center">FUNCIÓN OBJETIVO</div>
-                    <div class="col-md-6 offset-md-1 text-end">Total Costo Mín (Z) =</div>
-                    <div class="col-md-5"><input type="text" class="form-control text-center" readonly></div>
-                </div><br>
+                <embed src="./jsx/index.html" type="" width="100%" height="600px">
             </div>
         </div>
-        <div class="row">
+        
+        <!-- <div class="row">
             <div class="row">
                 <div class="col-1"></div>
                 <div class="col-6 alert alert-primary text-center">Clientes</div>
@@ -148,7 +176,7 @@
                 <div class="col-2"><input id="Rdc2" type="text" class="form-control text-center" readonly></div>
                 <div class="col-2"><input id="Rdc3" type="text" class="form-control text-center" readonly></div>
             </div>
-        </div>
+        </div> -->
     </div>
 </body>
 </html>
