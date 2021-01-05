@@ -57,20 +57,22 @@
                       <span class="carousel-control-next-icon" aria-hidden="true"></span>
                       <span class="visually-hidden">Next</span>
                     </a>
+                </div><br>
+                <div class="card" style="width: 18rem;">
+                    <img src="./transporte.png" class="card-img-top" alt="..." style="width: 18rem;">
                 </div>
+                <!-- <h5>Métodos de Aproximación</h5>
+                <div class="alert alert-primary mt-2">Método de <b>Costo Mínimo</b></div>
+                <div class="alert alert-primary mt-2">Método de <b>Vogel</b></div> -->
             </div>
             <div class="col-md-9">
                 <div class="card ms-4" style="max-width:100%;">
                     <div class="row g-0">
-                        <div class="col-md-6">
+                        <div class="col-md-5">
                             <img src="./transporte.jpg" alt="...">
                         </div>
-                        <div class="col-md-6">
+                        <div class="col-md-7">
                             <div class="card-body">
-                                <h5 class="card-title">Problema de Transporte</h5>
-                                <p class="card-text" style="text-align: justify;">
-                                    This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.
-                                </p>
                                 <table class="table table-bordered table-sm mb-0">
                                     <thead class="table-light">
                                         <tr>
@@ -89,16 +91,16 @@
                                     <tbody>
                                         <tr>
                                             <th class="bg-info text-center">A1</th>
-                                            <td class="bg-warning text-center">$ 3</td>
-                                            <td class="bg-warning text-center">$ 4</td>
-                                            <td class="bg-warning text-center">$ 6</td>
+                                            <td class="bg-warning text-center">$ 3·X<sub>1</sub></td>
+                                            <td class="bg-warning text-center">$ 4·X<sub>2</sub></td>
+                                            <td class="bg-warning text-center">$ 6·X<sub>3</sub></td>
                                             <td class="text-center">160 000</td>
                                         </tr>
                                         <tr>
                                             <th class="bg-info text-center">A2</th>
-                                            <td class="bg-warning text-center">$ 5</td>
-                                            <td class="bg-warning text-center">$ 3</td>
-                                            <td class="bg-warning text-center">$ 5</td>
+                                            <td class="bg-warning text-center">$ 5·X<sub>4</sub></td>
+                                            <td class="bg-warning text-center">$ 3·X<sub>5</sub></td>
+                                            <td class="bg-warning text-center">$ 5·X<sub>6</sub></td>
                                             <td class="text-center">120 000</td>
                                         </tr>
                                     </tbody>
@@ -108,10 +110,47 @@
                                             <td class="text-center">80 000</td>
                                             <td class="text-center">70 000</td>
                                             <td class="text-center">90 000</td>
-                                            <th></th>
+                                            <td class="text-center">
+                                                <span class="badge rounded-pill bg-light text-dark">Σ=240 000</span>
+                                                <hr class="m-0">
+                                                <span class="badge rounded-pill bg-light text-dark">Σ=280 000</span>
+                                            </td>
                                         </tr>
                                     </tfoot>
-                                </table>                              
+                                </table>
+                                <p class="card-text mt-2" style="text-align: justify;">
+                                    <span class="badge bg-dark">Función Objetivo (F.O.)</span>
+                                    <span class="badge rounded-pill bg-secondary">
+                                        Min Z
+                                    </span> =
+                                    <span class="badge rounded-pill bg-light text-dark">
+                                        3X<sub>1</sub> + 4X<sub>2</sub> + 6X<sub>3</sub> + 5X<sub>4</sub> + 3X<sub>5</sub> + 5X<sub>6</sub>
+                                    </span><br>
+                                    <span class="badge bg-dark">Variables de Decisión</span>
+                                    <span class="badge rounded-pill bg-secondary">
+                                        X<sub>ij</sub>
+                                    </span> =
+                                    <span class="badge rounded-pill bg-light text-dark">
+                                        X<sub>1</sub> , X<sub>2</sub> , X<sub>3</sub> , X<sub>4</sub> , X<sub>5</sub> , X<sub>6</sub>
+                                    </span><br>
+                                    <span class="badge bg-dark">Restricciones</span>
+                                    <span class="badge rounded-pill bg-secondary">No negatividad:</span>
+                                    <span class="badge rounded-pill bg-light text-dark">
+                                        X<sub>1</sub> , X<sub>2</sub> , X<sub>3</sub> ,
+                                        X<sub>4</sub> , X<sub>5</sub> , X<sub>6</sub> ≥ 0
+                                    </span><br>
+                                    <span class="badge rounded-pill bg-secondary">Oferta:</span>
+                                    <span class="badge rounded-pill bg-light text-dark">
+                                        X<sub>1</sub> + X<sub>2</sub> + X<sub>3</sub> <= 160 000
+                                    </span> ;
+                                    <span class="badge rounded-pill bg-light text-dark">
+                                        X<sub>4</sub> + X<sub>5</sub> + X<sub>6</sub> <= 120 000
+                                    </span><br>
+                                    <span class="badge rounded-pill bg-secondary">Demanda:</span>
+                                    <span class="badge rounded-pill bg-light text-dark">X<sub>1</sub> + X<sub>4</sub> = 80 000</span> ;
+                                    <span class="badge rounded-pill bg-light text-dark">X<sub>2</sub> + X<sub>5</sub> = 70 000</span> ;
+                                    <span class="badge rounded-pill bg-light text-dark">X<sub>3</sub> + X<sub>6</sub> = 90 000</span>
+                                </p>
                                 <!-- <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p> -->
                             </div>
                         </div>

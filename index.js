@@ -2,6 +2,13 @@ window.onload = function () {
     var btnAdd = document.getElementById("btn_resolver");
     btnAdd.onclick = Resolver;
 };
+
+var popover = new bootstrap.Popover(document.querySelector('.popover'), {
+    container: 'body',
+    html: true,
+    trigger: 'hover'
+})
+
 var arreglo = [];
 function Resolver() {
     var a1c1 = document.getElementById("a1c1").value;
